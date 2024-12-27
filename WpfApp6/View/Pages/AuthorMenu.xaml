@@ -1,0 +1,33 @@
+﻿<Page x:Class="WpfApp6.View.Pages.AuthorMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp6.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthorMenu">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <ListView ItemsSource="{Binding Authors}" Name="AuthorList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Foreground="Black" FontSize="16" VerticalAlignment="Center" Text="{Binding Name}" FontWeight="DemiBold"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="200">
+            <Button Click="AddAuthor" Content="Добавить автора" Margin="0 , 4 ,0 , 0"/>
+            <Button Click="UpdateAuthor" Content="Изменить автора" Margin="0 , 4 ,0 , 0"/>
+            <Button Click="DeleteAuthor" Content="Удалить автора" Margin="0 , 4 ,0 , 0"/>
+            <Button Click="Back" Content="Назад" Margin="0 , 4 ,0 , 0"/>
+        </StackPanel>
+    </Grid>
+</Page>
